@@ -1,5 +1,5 @@
-#include "dna.h"
 #include <stdio.h>
+#include "dna.h"
 
 #define max(X, Y) (((X) > (Y)) ? (X) : (Y))
 
@@ -41,8 +41,8 @@ int mlcs_w(char a[], int n, char b[], int m, int length[MAX_SIZE + 1][MAX_SIZE +
   } else {
     int shift_n = mlcs_w(a, n - 1, b, m, length);
     int shift_m = mlcs_w(a, n, b, m - 1, length);
-    //Adiciona o caso na matriz
 
+    //Adiciona o caso na matriz
     if (shift_n >= shift_m) {
       length[n][m] = shift_n;
       return shift_n;
